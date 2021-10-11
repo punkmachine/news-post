@@ -1,4 +1,4 @@
-import { DECR, INCR } from "./types";
+import { DECR, INCR, INPUT_TEXT } from "./types";
 
 export function incrementLikes() {
 	return {
@@ -9,5 +9,12 @@ export function incrementLikes() {
 export function decrementLikes() {
 	return {
 		type: DECR
+	}
+}
+
+export function inputText(text) {
+	return {
+		type: INPUT_TEXT,
+		text
 	}
 }
