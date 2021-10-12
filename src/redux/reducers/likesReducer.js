@@ -1,4 +1,4 @@
-import { INCR, DECR } from "./types";
+import { INCR, DECR } from "../types";
 
 //начальное значение
 const initialState = {
