@@ -7,6 +7,7 @@ import {
 	COMMENT_DEL 
 } from "./types";
 
+//создание функции, которая будет возвращать тип для Reducer
 export function incrementLikes() {
 	return {
 		type: INCR
