@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { incrementLikes, decrementLikes } from './redux/actions';
+import { incrementLikes, decrementLikes } from '../redux/actions';
 
 function Likes(props) {
 	//создаем диспатч

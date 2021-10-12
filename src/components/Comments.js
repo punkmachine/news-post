@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import uniqid from 'uniqid';
 
 import SingleComment from "./SingleComment";
-import { commentCreate } from "./redux/actions";
+import { commentCreate } from "../redux/actions";
 
 
 function Comments(props) {

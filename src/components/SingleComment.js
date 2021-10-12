@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { commentUpd, commentDel } from "./redux/actions";
+import { commentUpd, commentDel } from "../redux/actions";
 
 function SingleComment({data}) {
 	const {id, text} = data;
