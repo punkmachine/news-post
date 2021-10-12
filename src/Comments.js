@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import uniqid from 'uniqid';
+
 import SingleComment from "./SingleComment";
 import { commentCreate } from "./redux/actions";
-import uniqid from 'uniqid';
+
 
 function Comments(props) {
 	const [textComment, setTextComment] = useState('');

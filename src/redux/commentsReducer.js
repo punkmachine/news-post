@@ -1,4 +1,8 @@
-import { COMMENT_CREATE, COMMENT_UPD, COMMENT_DEL } from "./types";
+import { 
+	COMMENT_CREATE, 
+	COMMENT_UPD, 
+	COMMENT_DEL 
+} from "./types";
 
 const initialState = {
 	comments: []
