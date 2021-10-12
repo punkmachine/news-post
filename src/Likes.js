@@ -1,4 +1,3 @@
-// import { connect } from 'react-redux';
 import { useDispatch, useSelector } from "react-redux";
 import { incrementLikes, decrementLikes } from './redux/actions';
 
