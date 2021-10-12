@@ -1,27 +1,27 @@
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 import { incrementLikes, decrementLikes } from './redux/actions';
 
 function Likes(props) {
+	const dispatch = useDispatch();
+	const countLikes = useSelector(state => {
+		return state.likesReducer.likes;
+	});
+
+	function handleLikes() {
+		dispatch(incrementLikes());
+	}
+
+	function handleDislikes() {
+		dispatch(decrementLikes());
+	}
+
 	return (
 		<div className="button-controls">
-			<button onClick={props.onIncrementLikes}>❤ {props.likes}</button>
-			<button onClick={props.onDecrementLikes}>Dislike</button>
+			<button onClick={handleLikes}>❤ {countLikes}</button>
+			<button onClick={handleDislikes}>Dislike</button>
 		</div>
 	);
 }
 
-function mapStateToProps(state) {
-	const { likesReducer } = state;
-	return {
-		likes: likesReducer.likes,
-	}
-}
-
-function mapDispatchToProps(dispatch) {
-	return {
-		onIncrementLikes: () => dispatch(incrementLikes()),
-		onDecrementLikes: () => dispatch(decrementLikes())
-	}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Likes);
+export default Likes;
