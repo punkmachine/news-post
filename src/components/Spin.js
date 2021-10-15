@@ -5,9 +5,7 @@ function Spin(props) {
 	const spinner = useSelector(state => {
 		return state.appReducer.loading;
 	});
-
-	console.log('spinner >>', spinner);
-
+	
 	return (
 		<div className="loader-styles">
 			<Loader 
