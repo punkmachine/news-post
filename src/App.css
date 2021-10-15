@@ -31,6 +31,7 @@
 .card-image img {
   width: 100%;
   margin: 0;
+  user-select: none;
 }
 .card-comments {
   flex: 1 0 40%;
@@ -43,6 +44,7 @@
 .comments-item-delete {
   padding: 5px 15px 5px 5px;
   cursor: pointer;
+  user-select: none;
 }
 .button-controls {
   display: flex;
@@ -69,6 +71,7 @@ button {
   color: #125688;
   transition: all 0.2s;
   box-sizing: padding-box;
+  user-select: none;
 }
 button hover {
   border-color: #125688;
