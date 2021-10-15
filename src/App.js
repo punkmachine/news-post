@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import Likes from './components/Likes';
 import Title from './components/Title';
 import Comments from './components/Comments';
