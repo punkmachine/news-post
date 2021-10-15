@@ -4,7 +4,8 @@ import {
 	INPUT_TEXT, 
 	COMMENT_CREATE, 
 	COMMENT_UPD, 
-	COMMENT_DEL 
+	COMMENT_DEL,
+	COMMENTS_LOAD 
 } from "./types";
 
 //создание функции, которая будет возвращать тип для Reducer
@@ -45,5 +46,16 @@ export function commentDel(id) {
 	return {
 		type: COMMENT_DEL,
 		id
+	}
+}
+
+export function commentsLoad() {
+	return async dispatch =>{
+		const response = await fetch('https://jsonplaceholder.typicode.com/comments?_limit=10');
+		const jsonData = await response.json();
+		dispatch({
+			type: COMMENTS_LOAD,
+			data: jsonData
+		})
 	}
 }
