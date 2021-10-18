@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import uniqid from 'uniqid';
 import SingleComment from "./SingleComment";
-import { commentCreate, commentsLoad } from "../redux/actions";
+import { commentCreate, commentsLoad, loadMoreComments } from "../redux/actions";
 
 
 function Comments(props) {
 	const [textComment, setTextComment] = useState('');
+	const [countComments, setCountComments] = useState(20);
 	const dispatch = useDispatch();
 	const comments = useSelector(state => state.commentsReducer.comments);
 
@@ -21,6 +22,11 @@ function Comments(props) {
 		dispatch(commentCreate(id, textComment));
 		
 		event.target.reset();
+	}
+
+	function handleShowMore() {
+		setCountComments((prev) => prev + 10);
+		dispatch(loadMoreComments(countComments));
 	}
 
 	useEffect(() => {
@@ -38,6 +44,7 @@ function Comments(props) {
 			{!!comments.length && comments.map(res => {
 				return <SingleComment key={res.id} data={res} />
 			})}
+			<button onClick={handleShowMore}>Показать еще...</button>
 		</div>
 	);
 }
