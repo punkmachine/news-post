@@ -9,7 +9,8 @@ import {
 	LOADER_DISPLAY_ON,
 	LOADER_DISPLAY_OFF,
 	ERROR_DISPLAY_ON,
-	ERROR_DISPLAY_OFF
+	ERROR_DISPLAY_OFF,
+	LOAD_MORE_COMMENTS
 } from "./types";
 
 export function incrementLikes() {
@@ -71,7 +72,28 @@ export function commentsLoad() {
 			dispatch(errorOn('Ошибка API'));
 			dispatch(loaderOff());
 		}
-		
+	}
+}
+
+export function loadMoreComments(countComments) {
+	return async dispatch => {
+		try {
+			dispatch(loaderOn());
+
+			const response = await fetch(`https://jsonplaceholder.typicode.com/comments?_limit=${countComments}`);
+			const jsonData = await response.json();
+
+			dispatch({
+				type: LOAD_MORE_COMMENTS,
+				data: jsonData
+			});
+
+			dispatch(loaderOff());
+		}
+		catch(err) {
+			dispatch(errorOn('Ошибка API'));
+			dispatch(loaderOff());
+		}
 	}
 }
 
