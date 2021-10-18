@@ -28,7 +28,8 @@ function Comments(props) {
 	return (
 		<div className="card-comments">
 			<form className="comments-item-create" onSubmit={handleSubmit} >
-				<input type="text" value={textComment} onChange={handleInput} />
+				<span>Добавить комментарий: </span>
+				<input type="text" value={textComment} onChange={handleInput} title='Введите ваш комментарий' />
 				<input type="submit" hidden />
 			</form>
 			{!!comments.length && comments.map(res => {

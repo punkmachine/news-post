@@ -38,7 +38,12 @@
 		}
 
 		&-comments {
-			flex: 1 0 40%;
+			// flex: 1 0 40%;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			gap: 10px;
+
 			max-width: 100%;
 		}
 
@@ -56,11 +61,23 @@
 .comments-item {
 	display: flex;
 	align-items: center;
+	font-size: 20px;
 
 	&-delete {
-		padding: 5px 15px 5px 5px;
+		font-size: 22px;
+		padding: 0 15px 0 0;
 		cursor: pointer;
 		user-select: none;
+	}
+
+	&-create {
+		display: flex;
+		align-items: center;
+		margin: 15px 0;
+
+		span {
+			width: 280px;
+		}
 	}
 }
 
@@ -95,7 +112,7 @@ input {
 	width: 100%;
 	border: 0;
 	padding: 10px 0;
-	border-bottom: 1px solid #f2f2f2;
+	border-bottom: 1px solid #bba8a8;
 	outline: none;
 	resize: vertical;
 }

@@ -30,8 +30,8 @@ function SingleComment({data}) {
 
 	return (
 		<form className="comments-item" onSubmit={handleSubmit} >
-			<div className="comments-item-delete" onClick={handleDelete} >&times;</div>
-			<input type="text" value={commentText} onChange={handleInput} />
+			<div className="comments-item-delete" onClick={handleDelete} title='Нажмите, чтобы удалить' >&times;</div>
+			<input type="text" title='Нажмите, чтобы редактировать' value={commentText} onChange={handleInput} />
 			<input type="submit" hidden />
 		</form>
 	);
