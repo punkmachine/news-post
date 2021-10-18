@@ -15,9 +15,12 @@ function Comments(props) {
 	}
 
 	function handleSubmit(event) {
-		event.preventDefault()
+		event.preventDefault();
+
 		const id = uniqid();
 		dispatch(commentCreate(id, textComment));
+		
+		event.target.reset();
 	}
 
 	useEffect(() => {
@@ -29,7 +32,7 @@ function Comments(props) {
 		<div className="card-comments">
 			<form className="comments-item-create" onSubmit={handleSubmit} >
 				<span>Добавить комментарий: </span>
-				<input type="text" value={textComment} onChange={handleInput} title='Введите ваш комментарий' />
+				<input type="text" onChange={handleInput} title='Введите ваш комментарий' />
 				<input type="submit" hidden />
 			</form>
 			{!!comments.length && comments.map(res => {
