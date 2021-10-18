@@ -11,11 +11,12 @@ const initialState = {
 
 export const commentsReducer = (state = initialState, action) => {
 	switch(action.type) {
-		case COMMENT_CREATE: 
+		case COMMENT_CREATE: {
 			return {
 				...state,
 				comments: [...state.comments, action.data]
 			}
+		}
 		
 		case COMMENT_UPD: {
 			const {data} = action;

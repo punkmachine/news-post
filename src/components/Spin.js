@@ -1,10 +1,8 @@
 import Loader from "react-loader-spinner";
 import { useSelector } from "react-redux";
 
-function Spin(props) {
-	const spinner = useSelector(state => {
-		return state.appReducer.loading;
-	});
+function Spin() {
+	const spinner = useSelector(state => state.appReducer.loading);
 	
 	return (
 		<div className="loader-styles">

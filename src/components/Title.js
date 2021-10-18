@@ -1,11 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { inputText } from "../redux/actions";
 
-function Title(props) {
-	const text = useSelector(state => {
-		const {inputReducer} = state;
-		return inputReducer.text;
-	})
+function Title() {
+	const text = useSelector(state => state.inputReducer.text);
 	const dispatch = useDispatch();
 
 	function handleChange(event) {

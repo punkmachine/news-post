@@ -6,9 +6,7 @@ import Comments from './components/Comments';
 import Spin from './components/Spin';
 
 function App() {
-	const error = useSelector(state => {
-		return state.appReducer.error;
-	});
+	const error = useSelector(state => state.appReducer.error);
 
 	return (
 		<div className="App">

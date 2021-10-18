@@ -8,9 +8,7 @@ import { commentCreate, commentsLoad } from "../redux/actions";
 function Comments(props) {
 	const [textComment, setTextComment] = useState('');
 	const dispatch = useDispatch();
-	const comments = useSelector(state => {
-		return state.commentsReducer.comments;
-	});
+	const comments = useSelector(state => state.commentsReducer.comments);
 
 	function handleInput(event) {
 		setTextComment(event.target.value);
