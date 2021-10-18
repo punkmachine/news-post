@@ -2,7 +2,8 @@ import {
 	COMMENT_CREATE, 
 	COMMENT_UPD, 
 	COMMENT_DEL,
-	COMMENTS_LOAD 
+	COMMENTS_LOAD,
+	LOAD_MORE_COMMENTS
 } from "../types";
 
 const initialState = {
@@ -55,7 +56,21 @@ export const commentsReducer = (state = initialState, action) => {
 					id: res.id,
 					text: res.name
 				}
-			})
+			});
+
+			return {
+				...state,
+				comments: commentsNew
+			}
+		}
+
+		case LOAD_MORE_COMMENTS: {
+			const commentsNew = action.data.map(res => {
+				return {
+					id: res.id,
+					text: res.name
+				}
+			});
 
 			return {
 				...state,
