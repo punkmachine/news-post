@@ -4,11 +4,12 @@
 	.wrap {
 		position: relative;
 		max-width: 1200px;
-		margin: 140px auto 0;
+		margin: 100px auto 0;
 	}
 
 	.card {
 		display: flex;
+		flex-direction: column;
 		padding: 20px;
 		border: 1px solid #EDEEED;
 		box-shadow: 0 0 0 5px rgba(0,0,0,0.03);
@@ -27,7 +28,7 @@
 			border: 0;
 			padding: 0;
 			flex: 1 0 60%;
-			max-width: 60%;
+			max-width: 100%;
 
 			img {
 				width: 100%;
@@ -38,7 +39,7 @@
 
 		&-comments {
 			flex: 1 0 40%;
-			max-width: 40%;
+			max-width: 100%;
 		}
 
 		&-title-top {
